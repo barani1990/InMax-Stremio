@@ -1,0 +1,89 @@
+{
+"id": "org.tamilmv.recent",
+"version": "1.2.0",
+"name": "InMax",
+"description": "Recent Indian movies, series, and shows across Tamil, Malayalam, Telugu, Kannada, Hindi, and multi-language categories.",
+"logo": "https://cold-logic5.github.io/TMV_Stremio_Addon_img/InMax%20Logo4.png",
+"catalogs": [
+{
+"type": "movie",
+"id": "tamilmv-now",
+"name": "TamilMV Recent Movies",
+"extra": [
+{"name": "skip", "isRequired": false},
+{"name": "limit", "isRequired": false},
+{
+"name": "genre",
+"isRequired": false,
+"options": [
+"Tamil",
+"Malayalam",
+"Telugu",
+"Kannada",
+"Hindi",
+"Multi-Lang"
+]
+}
+]
+},
+{
+"type": "series",
+"id": "tamilmv-series",
+"name": "TamilMV Recent Series",
+"extra": [
+{"name": "skip", "isRequired": false},
+{"name": "limit", "isRequired": false},
+{
+"name": "genre",
+"isRequired": false,
+"options": [
+"Tamil",
+"Malayalam",
+"Telugu",
+"Kannada",
+"Hindi",
+"Multi-Lang"
+]
+}
+]
+},
+{
+"type": "series",
+"id": "tamilmv-shows",
+"name": "TamilMV Recent TV Shows",
+"extra": [
+{"name": "skip", "isRequired": false},
+{"name": "limit", "isRequired": false},
+{
+"name": "genre",
+"isRequired": false,
+"options": [
+"Tamil",
+"Malayalam",
+"Telugu",
+"Kannada",
+"Hindi",
+"Multi-Lang"
+]
+}
+]
+}
+],
+"resources": [
+"catalog",
+"stream",
+"meta"
+],
+"types": [
+"movie",
+"series"
+],
+"idPrefixes": [
+"tt",
+"tamilmv-"
+],
+"stremioAddonsConfig": {
+"issuer": "https://stremio-addons.net",
+"signature": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..cRYD4CgiXYy97pB2a10sug.EGnamjOef66h3f9rFBdTarLsvequuRlT10-0tFIGqPRXiMUv7n_CY1ehgfS3nPN2xTLXwY1SlXehsjFh0PsCl6hN6Jz_BXc3gvtvB3TotC8GUgIyjiD0E3iPr4LK2eD1.Ht5wJLt9h-WFNnG2LUUOtw"
+}
+}
