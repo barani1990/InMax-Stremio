@@ -3,10 +3,9 @@ const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
 
 const manifest = {
   id: "org.tamilmv.recent",
-  version: "1.2.1",
+  version: "1.2.2",
   name: "InMax",
   description: "InMax catalog for authorized media sources",
-  logo: "https://cold-logic5.github.io/TMV_Stremio_Addon_img/InMax%20Logo4.png",
   resources: ["catalog", "meta", "stream"],
   types: ["movie", "series"],
   idPrefixes: ["inmax-"],
@@ -28,10 +27,35 @@ const sampleMovie = {
   poster: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg"
 };
 
+const sampleSeries = {
+  id: "inmax-sample-series",
+  type: "series",
+  name: "InMax Series Test",
+  description: "Sample entry to test the series catalog",
+  releaseInfo: "2025"
+};
+
+const sampleShow = {
+  id: "inmax-sample-show",
+  type: "series",
+  name: "InMax TV Show Test",
+  description: "Sample entry to test the TV-show catalog",
+  releaseInfo: "2025"
+};
+
 builder.defineCatalogHandler(({ type, id }) => {
   if (type === "movie" && id === "tamilmv-now") {
     return Promise.resolve({ metas: [sampleMovie] });
   }
+
+  if (type === "series" && id === "tamilmv-series") {
+    return Promise.resolve({ metas: [sampleSeries] });
+  }
+
+  if (type === "series" && id === "tamilmv-shows") {
+    return Promise.resolve({ metas: [sampleShow] });
+  }
+
   return Promise.resolve({ metas: [] });
 });
 
@@ -39,6 +63,15 @@ builder.defineMetaHandler(({ type, id }) => {
   if (type === "movie" && id === "inmax-bbb") {
     return Promise.resolve({ meta: sampleMovie });
   }
+
+  if (type === "series" && id === "inmax-sample-series") {
+    return Promise.resolve({ meta: sampleSeries });
+  }
+
+  if (type === "series" && id === "inmax-sample-show") {
+    return Promise.resolve({ meta: sampleShow });
+  }
+
   return Promise.resolve({ meta: null });
 });
 
@@ -51,6 +84,7 @@ builder.defineStreamHandler(({ type, id }) => {
       }]
     });
   }
+
   return Promise.resolve({ streams: [] });
 });
 
