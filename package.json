@@ -1,0 +1,15 @@
+{
+  "name": "stremio-tmdb-catalog-addon",
+  "version": "1.0.0",
+  "description": "Stremio movie and TV catalogs powered by TMDB metadata",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "stremio-addon-sdk": "^1.6.10"
+  }
+}
